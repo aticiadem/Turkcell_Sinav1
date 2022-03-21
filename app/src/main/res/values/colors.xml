@@ -15,4 +15,7 @@
 
     <color name="login_text_color">#646260</color>
     <color name="login_edit_text_text_color">#9C9C9C</color>
+
+    <color name="product_item_text_color">#424242</color>
+    <color name="product_item_recycler_background_color">#F7F7F7</color>
 </resources>

@@ -10,11 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Turkcell_Sinav1">
         <activity
-            android:name=".presentation.view.ProductsActivity"
+            android:name=".presentation.ui.ProductsActivity"
             android:exported="false"
             android:theme="@style/Theme.Turkcell_Sinav1.DetailScreen"/>
         <activity
-            android:name=".presentation.view.MainActivity"
+            android:name=".presentation.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

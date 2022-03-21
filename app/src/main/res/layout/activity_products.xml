@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.view.ProductsActivity">
+    tools:context=".presentation.ui.ProductsActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -38,8 +38,8 @@
             android:textStyle="normal" />
 
         <include
-            layout="@layout/layout_basket"
             android:id="@+id/imageViewBasket"
+            layout="@layout/layout_basket"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="end"
@@ -64,21 +64,27 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
-        android:paddingVertical="5dp"
         android:paddingHorizontal="10dp"
-        tools:listitem="@layout/products_row"
+        android:paddingVertical="5dp"
+        android:elevation="10dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view"  />
+        app:layout_constraintTop_toBottomOf="@id/view"
+        tools:listitem="@layout/product_titles_row" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewItems"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="4"
+        android:background="@color/product_item_recycler_background_color"
+        android:paddingTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerViewTitles" />
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewTitles"
+        tools:listitem="@layout/product_items_row" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

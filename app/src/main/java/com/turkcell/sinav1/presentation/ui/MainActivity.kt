@@ -1,4 +1,4 @@
-package com.turkcell.sinav1.presentation.view
+package com.turkcell.sinav1.presentation.ui
 
 import android.content.Intent
 import android.os.Bundle

@@ -3,7 +3,8 @@ package com.turkcell.sinav1.presentation.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.turkcell.sinav1.databinding.ProductsRowBinding
+import com.turkcell.sinav1.R
+import com.turkcell.sinav1.databinding.ProductTitlesRowBinding
 import com.turkcell.sinav1.model.ProductTitle
 import com.turkcell.sinav1.util.ProductTitleClickListener
 
@@ -17,25 +18,24 @@ class ProductTitleAdapter(
             notifyDataSetChanged()
         }
 
-    class ProductViewHolder(private val binding: ProductsRowBinding) :
+    class ProductViewHolder(private val binding: ProductTitlesRowBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: ProductTitle) {
             binding.apply {
                 textViewTitle.text = item.name
-                // todo we will update here
-                /*if (item.clickState) {
-                    this.root.setBackgroundColor()
+                if (item.clickState) {
+                    this.root.setBackgroundResource(R.drawable.recycler_item_background_green)
                 } else {
-                    this.root.setBackgroundColor()
-                }*/
+                    this.root.setBackgroundResource(R.drawable.recycler_item_background)
+                }
             }
         }
 
         companion object {
             fun from(parent: ViewGroup): ProductViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
-                val binding = ProductsRowBinding.inflate(layoutInflater, parent, false)
+                val binding = ProductTitlesRowBinding.inflate(layoutInflater, parent, false)
                 return ProductViewHolder(binding)
             }
         }
@@ -49,7 +49,9 @@ class ProductTitleAdapter(
         val item = productsTitles[position]
         holder.bind(item)
 
-        holder.itemView.setOnClickListener { productTitleClickListener.onProductTitleClickListener(item) }
+        holder.itemView.setOnClickListener {
+            productTitleClickListener.onProductTitleClickListener(item)
+        }
     }
 
     override fun getItemCount(): Int = productsTitles.size
