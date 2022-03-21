@@ -37,7 +37,7 @@
             android:ems="10"
             android:hint="@string/mobile_phone"
             android:inputType="textPersonName"
-            android:maxLength="10"
+            android:maxLength="11"
             android:paddingHorizontal="20dp"
             android:paddingVertical="17dp"
             android:textColor="@color/black"

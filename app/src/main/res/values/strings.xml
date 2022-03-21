@@ -4,4 +4,8 @@
     <string name="mobile_phone">Cep Telefonu</string>
     <string name="login">Giriş Yap</string>
     <string name="without_login_continue">Üye olmadan devam et</string>
+    <string name="fill_in_the_blanks">Boşlukları Doldurunuz!</string>
+    <string name="products">Ürünler</string>
+    <string name="basket">Sepet</string>
+    <string name="input_error">Telefon Numarası veya Şifre Yanlış.</string>
 </resources>
