@@ -12,6 +12,7 @@ import com.turkcell.sinav1.presentation.adapter.ProductItemAdapter
 import com.turkcell.sinav1.presentation.adapter.ProductTitleAdapter
 import com.turkcell.sinav1.util.Constants.DID_LOG_IN
 import com.turkcell.sinav1.util.Constants.INTENT_ITEM_INFO
+import com.turkcell.sinav1.util.Constants.TOTAL_PRICE
 import com.turkcell.sinav1.util.ProductItemClickListener
 import com.turkcell.sinav1.util.ProductTitleClickListener
 import com.turkcell.sinav1.util.SpacingItemDecorator
@@ -22,7 +23,6 @@ class ProductsActivity : AppCompatActivity(), ProductTitleClickListener, Product
     private lateinit var basketBinding: LayoutBasketBinding
     private lateinit var productTitleAdapter: ProductTitleAdapter
     private lateinit var productItemsAdapter: ProductItemAdapter
-    private var totalCount = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,8 +35,6 @@ class ProductsActivity : AppCompatActivity(), ProductTitleClickListener, Product
         if (!DID_LOG_IN) {
             binding.imageViewBasket.root.visibility = View.GONE
         }
-
-        updateBasketItemsCount(null)
     }
 
     private fun initBinding() {
@@ -52,6 +50,11 @@ class ProductsActivity : AppCompatActivity(), ProductTitleClickListener, Product
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        binding.imageViewBasket.textViewPrice.text = getString(R.string.turkish_lira, TOTAL_PRICE)
+    }
+
     private fun initRecyclerViews() {
         productTitleAdapter = ProductTitleAdapter(this)
         productTitleAdapter.productsTitles = ProductTitles
@@ -64,25 +67,18 @@ class ProductsActivity : AppCompatActivity(), ProductTitleClickListener, Product
         binding.recyclerViewItems.addItemDecoration(SpacingItemDecorator(x))
     }
 
-    private fun updateBasketItemsCount(count: Int?) {
-        if (count != null) {
-            totalCount += count
-        }
-        if (totalCount == 0) {
-            basketBinding.textView.visibility = View.GONE
-        } else {
-            basketBinding.textView.visibility = View.VISIBLE
-            basketBinding.textView.text = getString(R.string.turkish_lira, (totalCount + count!!))
-        }
-    }
-
     override fun onProductTitleClickListener(product: ProductTitle) {
         updateTitleBackground(product)
         updateListOfItem(product.id)
     }
 
     override fun onClickAddToBasketClickListener(item: ProductItem) {
-        // no-op
+        updateBasketItemsCount(item.productPrice)
+    }
+
+    private fun updateBasketItemsCount(count: Float) {
+        TOTAL_PRICE += count
+        binding.imageViewBasket.textViewPrice.text = getString(R.string.turkish_lira, TOTAL_PRICE)
     }
 
     override fun onClickGoToItemDetailScreen(item: ProductItem) {

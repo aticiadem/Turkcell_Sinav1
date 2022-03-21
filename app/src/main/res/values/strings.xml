@@ -6,8 +6,9 @@
     <string name="without_login_continue">Üye olmadan devam et</string>
     <string name="fill_in_the_blanks">Boşlukları Doldurunuz!</string>
     <string name="products">Ürünler</string>
+    <string name="product_detail">Ürün Detayları</string>
     <string name="basket">Sepet</string>
     <string name="input_error">Telefon Numarası veya Şifre Yanlış.</string>
-    <string name="turkish_lira">₺%d</string>
+    <string name="turkish_lira">₺%,.2f</string>
     <string name="turkish_lira_float">₺%,.2f</string>
 </resources>

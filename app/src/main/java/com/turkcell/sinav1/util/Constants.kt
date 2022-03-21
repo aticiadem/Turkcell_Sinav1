@@ -8,5 +8,5 @@ object Constants {
     const val DEFAULT_PASSWORD = "1"
 
     var DID_LOG_IN = false
-
+    var TOTAL_PRICE: Float = 0f
 }
