@@ -12,12 +12,13 @@
         android:layout_marginHorizontal="10dp"
         android:layout_marginVertical="10dp"
         android:background="@drawable/product_item_background"
+        android:contentDescription="@null"
         android:elevation="4dp"
-        android:src="@drawable/erikli"
+        android:padding="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@null" />
+        tools:src="@drawable/erikli" />
 
     <ImageView
         android:id="@+id/imageViewAdd"
@@ -49,6 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
+        android:textAlignment="center"
         android:textColor="@color/product_item_text_color"
         android:textSize="@dimen/text_size_10_sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView"

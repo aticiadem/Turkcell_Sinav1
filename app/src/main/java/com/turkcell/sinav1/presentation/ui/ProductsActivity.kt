@@ -6,17 +6,13 @@ import androidx.appcompat.app.AppCompatActivity
 import com.turkcell.sinav1.R
 import com.turkcell.sinav1.databinding.ActivityProductsBinding
 import com.turkcell.sinav1.databinding.LayoutBasketBinding
-import com.turkcell.sinav1.model.ProductItem
-import com.turkcell.sinav1.model.ProductTitle
-import com.turkcell.sinav1.model.ProductTitles
-import com.turkcell.sinav1.model.Waters
+import com.turkcell.sinav1.model.*
 import com.turkcell.sinav1.presentation.adapter.ProductItemAdapter
 import com.turkcell.sinav1.presentation.adapter.ProductTitleAdapter
 import com.turkcell.sinav1.util.Constants.INTENT_USER_DID_LOG_IN
 import com.turkcell.sinav1.util.ProductItemClickListener
 import com.turkcell.sinav1.util.ProductTitleClickListener
 import com.turkcell.sinav1.util.SpacingItemDecorator
-import com.turkcell.sinav1.util.toast
 
 class ProductsActivity : AppCompatActivity(), ProductTitleClickListener, ProductItemClickListener {
 
@@ -84,7 +80,8 @@ class ProductsActivity : AppCompatActivity(), ProductTitleClickListener, Product
     }
 
     override fun onProductTitleClickListener(product: ProductTitle) {
-        this.toast(product.name)
+        updateTitleBackground(product)
+        updateListOfItem(product.id)
     }
 
     override fun onClickAddToBasketClickListener(item: ProductItem) {
@@ -93,6 +90,37 @@ class ProductsActivity : AppCompatActivity(), ProductTitleClickListener, Product
 
     override fun onClickGoToItemDetailScreen(item: ProductItem) {
         // no-op
+    }
+
+    private fun updateTitleBackground(item: ProductTitle) {
+        val newTitleList = arrayListOf<ProductTitle>()
+        ProductTitles.forEach {
+            it.clickState = it.id == item.id
+            newTitleList.add(it)
+        }
+        productTitleAdapter.productsTitles = newTitleList
+    }
+
+    private fun updateListOfItem(clickedId: Int) {
+        var newItemList = arrayListOf<ProductItem>()
+        when (clickedId) {
+            0 -> {
+                newItemList = Waters
+            }
+            1 -> {
+                newItemList = CarbonatedBeverage
+            }
+            2 -> {
+                newItemList = MineralWater
+            }
+            3 -> {
+                newItemList = Juice
+            }
+            4 -> {
+                newItemList = Ayran
+            }
+        }
+        productItemsAdapter.productItemList = newItemList
     }
 
 }

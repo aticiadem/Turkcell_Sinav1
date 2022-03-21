@@ -13,25 +13,25 @@ val product1 = ProductTitle(
 )
 
 val product2 = ProductTitle(
-    0,
+    1,
     "Gazli Icecek",
     false
 )
 
 val product3 = ProductTitle(
-    0,
+    2,
     "Maden Suyu",
     false
 )
 
 val product4 = ProductTitle(
-    0,
+    3,
     "Meyve Suyu",
     false
 )
 
 val product5 = ProductTitle(
-    0,
+    4,
     "Ayran",
     false
 )
