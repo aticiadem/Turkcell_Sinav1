@@ -1,5 +1,6 @@
 package com.turkcell.sinav1.presentation.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -9,7 +10,8 @@ import com.turkcell.sinav1.databinding.LayoutBasketBinding
 import com.turkcell.sinav1.model.*
 import com.turkcell.sinav1.presentation.adapter.ProductItemAdapter
 import com.turkcell.sinav1.presentation.adapter.ProductTitleAdapter
-import com.turkcell.sinav1.util.Constants.INTENT_USER_DID_LOG_IN
+import com.turkcell.sinav1.util.Constants.DID_LOG_IN
+import com.turkcell.sinav1.util.Constants.INTENT_ITEM_INFO
 import com.turkcell.sinav1.util.ProductItemClickListener
 import com.turkcell.sinav1.util.ProductTitleClickListener
 import com.turkcell.sinav1.util.SpacingItemDecorator
@@ -21,7 +23,6 @@ class ProductsActivity : AppCompatActivity(), ProductTitleClickListener, Product
     private lateinit var productTitleAdapter: ProductTitleAdapter
     private lateinit var productItemsAdapter: ProductItemAdapter
     private var totalCount = 0
-    private var didLogIn: Boolean? = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,12 +32,8 @@ class ProductsActivity : AppCompatActivity(), ProductTitleClickListener, Product
         initClickListener()
         initRecyclerViews()
 
-        didLogIn = intent.getBooleanExtra(INTENT_USER_DID_LOG_IN, false)
-
-        didLogIn?.let {
-            if (!it) {
-                binding.imageViewBasket.root.visibility = View.GONE
-            }
+        if (!DID_LOG_IN) {
+            binding.imageViewBasket.root.visibility = View.GONE
         }
 
         updateBasketItemsCount(null)
@@ -89,7 +86,9 @@ class ProductsActivity : AppCompatActivity(), ProductTitleClickListener, Product
     }
 
     override fun onClickGoToItemDetailScreen(item: ProductItem) {
-        // no-op
+        val intent = Intent(this, DetailActivity::class.java)
+        intent.putExtra(INTENT_ITEM_INFO, item)
+        startActivity(intent)
     }
 
     private fun updateTitleBackground(item: ProductTitle) {

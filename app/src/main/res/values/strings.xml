@@ -9,5 +9,5 @@
     <string name="basket">Sepet</string>
     <string name="input_error">Telefon Numarası veya Şifre Yanlış.</string>
     <string name="turkish_lira">₺%d</string>
-    <string name="turkish_lira_float">₺$%,.2f</string>
+    <string name="turkish_lira_float">₺%,.2f</string>
 </resources>

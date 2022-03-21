@@ -2,11 +2,13 @@ package com.turkcell.sinav1.presentation.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.turkcell.sinav1.R
 import com.turkcell.sinav1.databinding.ProductItemsRowBinding
 import com.turkcell.sinav1.model.ProductItem
+import com.turkcell.sinav1.util.Constants.DID_LOG_IN
 import com.turkcell.sinav1.util.ProductItemClickListener
 
 class ProductItemAdapter(
@@ -28,7 +30,14 @@ class ProductItemAdapter(
                 imageView.setImageResource(item.productImage)
                 textViewBrand.text = item.productBrand
                 textViewName.text = item.productName
-                textViewPrice.text = context.getString(R.string.turkish_lira_float, item.productPrice)
+                textViewPrice.text =
+                    context.getString(R.string.turkish_lira_float, item.productPrice)
+
+                if (!DID_LOG_IN) {
+                    imageViewAdd.visibility = View.GONE
+                } else {
+                    imageViewAdd.visibility = View.VISIBLE
+                }
 
                 imageViewAdd.setOnClickListener {
                     clickToAdd()

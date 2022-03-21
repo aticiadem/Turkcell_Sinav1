@@ -1,13 +1,14 @@
 package com.turkcell.sinav1.model
 
 import com.turkcell.sinav1.R
+import java.io.Serializable
 
 data class ProductItem(
     var productImage: Int,
     var productBrand: String,
     var productName: String,
     var productPrice: Float,
-)
+) : Serializable
 
 val water1 = ProductItem(
     R.drawable.erikli,
@@ -170,7 +171,7 @@ val ayran3 = ProductItem(
     3.55f
 )
 
-val ayran4= ProductItem(
+val ayran4 = ProductItem(
     R.drawable.icim_ayran,
     "İçim",
     "Ayran",
