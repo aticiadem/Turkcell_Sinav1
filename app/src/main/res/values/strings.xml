@@ -8,4 +8,5 @@
     <string name="products">Ürünler</string>
     <string name="basket">Sepet</string>
     <string name="input_error">Telefon Numarası veya Şifre Yanlış.</string>
+    <string name="turkish_lira">₺%d</string>
 </resources>

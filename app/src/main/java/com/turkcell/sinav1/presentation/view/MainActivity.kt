@@ -1,8 +1,9 @@
-package com.turkcell.sinav1
+package com.turkcell.sinav1.presentation.view
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.turkcell.sinav1.R
 import com.turkcell.sinav1.databinding.ActivityMainBinding
 import com.turkcell.sinav1.util.Constants.DEFAULT_PASSWORD
 import com.turkcell.sinav1.util.Constants.DEFAULT_TEL_NO
