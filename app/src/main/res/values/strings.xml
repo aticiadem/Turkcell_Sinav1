@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Turkcell_Sinav1</string>
+    <string name="password">Şifre</string>
+    <string name="mobile_phone">Cep Telefonu</string>
+    <string name="login">Giriş Yap</string>
+    <string name="without_login_continue">Üye olmadan devam et</string>
 </resources>

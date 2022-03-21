@@ -11,4 +11,8 @@
     <color name="blue">#094074</color>
     <color name="orange">#FE9000</color>
     <color name="green">#9DD71C</color>
+    <color name="gray_light">#F2EEE8</color>
+
+    <color name="login_text_color">#646260</color>
+    <color name="login_edit_text_text_color">#9C9C9C</color>
 </resources>

@@ -1,18 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:paddingBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/textViewTel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/mobile_phone"
+            android:textColor="@color/login_text_color"
+            android:textSize="@dimen/login_text_title_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Telefon Numarasi" />
+
+        <EditText
+            android:id="@+id/editTextTelNo"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:autofillHints=""
+            android:background="@drawable/login_edit_text_background"
+            android:ems="10"
+            android:hint="@string/mobile_phone"
+            android:inputType="textPersonName"
+            android:maxLength="10"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="17dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/login_edit_text_text_color"
+            android:textSize="@dimen/login_edit_text_text_size"
+            app:layout_constraintStart_toStartOf="@+id/textViewTel"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTel" />
+
+        <TextView
+            android:id="@+id/textViewPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/password"
+            android:textColor="@color/login_text_color"
+            android:textSize="@dimen/login_text_title_size"
+            app:layout_constraintStart_toStartOf="@+id/editTextTelNo"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTelNo"
+            tools:text="Şifre" />
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:autofillHints=""
+            android:background="@drawable/login_edit_text_background"
+            android:drawableEnd="@drawable/password_visibility_state"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="17dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/login_edit_text_text_color"
+            android:textSize="@dimen/login_edit_text_text_size"
+            app:layout_constraintStart_toStartOf="@+id/textViewPassword"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPassword" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonLogin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/login_page_button_background"
+            android:paddingVertical="14dp"
+            android:text="@string/login"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_16_sp"
+            app:layout_constraintEnd_toEndOf="@+id/editTextPassword"
+            app:layout_constraintStart_toStartOf="@+id/editTextPassword"
+            app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonContinue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/login_page_button_background"
+            android:paddingVertical="14dp"
+            android:text="@string/without_login_continue"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_16_sp"
+            app:layout_constraintEnd_toEndOf="@+id/buttonLogin"
+            app:layout_constraintStart_toStartOf="@+id/buttonLogin"
+            app:layout_constraintTop_toBottomOf="@id/buttonLogin" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
