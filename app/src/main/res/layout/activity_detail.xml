@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -74,6 +76,16 @@
             app:layout_constraintTop_toBottomOf="@id/view"
             tools:srcCompat="@drawable/balkan" />
 
+        <View
+            android:id="@+id/viewForImageBottom"
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:background="#EAEAEA"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageViewProduct" />
+
         <TextView
             android:id="@+id/textViewBrand"
             android:layout_width="wrap_content"
@@ -84,7 +96,7 @@
             android:textSize="@dimen/text_size_18_sp"
             app:layout_constraintEnd_toEndOf="@+id/imageViewProduct"
             app:layout_constraintStart_toStartOf="@+id/imageViewProduct"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewProduct"
+            app:layout_constraintTop_toBottomOf="@+id/viewForImageBottom"
             tools:text="Marka" />
 
         <TextView
@@ -120,6 +132,7 @@
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="20dp"
             android:textSize="@dimen/text_size_18_sp"
+            android:justificationMode="inter_word"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewItemPrice"
@@ -127,13 +140,14 @@
 
         <ImageView
             android:id="@+id/imageViewAdd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:elevation="5dp"
+            android:layout_width="45dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
             android:background="@drawable/product_item_add_image_background"
             android:contentDescription="@null"
+            android:elevation="5dp"
+            android:padding="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

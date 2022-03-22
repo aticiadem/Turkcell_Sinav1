@@ -2,6 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.Turkcell_Sinav1" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
         <item name="colorPrimary">@color/blue</item>
         <item name="colorPrimaryVariant">@color/blue</item>
         <item name="colorOnPrimary">@color/white</item>
@@ -14,7 +16,7 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.Turkcell_Sinav1.DetailScreen" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Turkcell_Sinav1.OtherScreens" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="colorPrimary">#FFFFFF</item>

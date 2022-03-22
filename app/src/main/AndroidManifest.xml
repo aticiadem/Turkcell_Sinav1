@@ -12,11 +12,11 @@
         <activity
             android:name=".presentation.ui.DetailActivity"
             android:exported="false"
-            android:theme="@style/Theme.Turkcell_Sinav1.DetailScreen" />
+            android:theme="@style/Theme.Turkcell_Sinav1.OtherScreens" />
         <activity
             android:name=".presentation.ui.ProductsActivity"
             android:exported="false"
-            android:theme="@style/Theme.Turkcell_Sinav1.DetailScreen" />
+            android:theme="@style/Theme.Turkcell_Sinav1.OtherScreens" />
         <activity
             android:name=".presentation.ui.MainActivity"
             android:exported="true">

@@ -2,6 +2,8 @@ package com.turkcell.sinav1.presentation.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import androidx.appcompat.app.AppCompatActivity
 import com.turkcell.sinav1.R
 import com.turkcell.sinav1.databinding.ActivityMainBinding
@@ -14,6 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var intentToProductScreen: Intent
+    private var eyeState = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +37,23 @@ class MainActivity : AppCompatActivity() {
             checkUserInputState(telNo, password)
         }
 
+        binding.pastePin.setOnClickListener {
+            checkPasswordEditTextEyeState()
+        }
+
+    }
+
+    private fun checkPasswordEditTextEyeState() {
+        if (eyeState == 0) {
+            binding.pastePin.setImageResource(R.drawable.ic_visibility_off)
+            binding.editTextPassword.transformationMethod = HideReturnsTransformationMethod()
+            eyeState = 1
+        } else {
+            binding.pastePin.setImageResource(R.drawable.ic_visibility_on)
+            binding.editTextPassword.transformationMethod = HideReturnsTransformationMethod()
+            binding.editTextPassword.transformationMethod = PasswordTransformationMethod()
+            eyeState = 0
+        }
     }
 
     private fun checkUserInputState(telNo: String, password: String) {

@@ -9,9 +9,34 @@
     tools:context=".presentation.ui.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:paddingBottom="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue"
+            android:minHeight="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <TextView
+                android:id="@+id/toolbarTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/login_title"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_24_sp"
+                android:textStyle="normal" />
+
+        </androidx.appcompat.widget.Toolbar>
 
         <TextView
             android:id="@+id/textViewTel"
@@ -23,7 +48,7 @@
             android:textColor="@color/login_text_color"
             android:textSize="@dimen/login_text_title_size"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
             tools:text="Telefon Numarasi" />
 
         <EditText
@@ -58,25 +83,47 @@
             app:layout_constraintTop_toBottomOf="@+id/editTextTelNo"
             tools:text="Şifre" />
 
-        <EditText
-            android:id="@+id/editTextPassword"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/editTextPasswordLayout"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="20dp"
-            android:autofillHints=""
-            android:background="@drawable/login_edit_text_background"
-            android:drawableEnd="@drawable/password_visibility_state"
-            android:ems="10"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:paddingHorizontal="20dp"
-            android:paddingVertical="17dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/login_edit_text_text_color"
-            android:textSize="@dimen/login_edit_text_text_size"
+            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="@+id/textViewPassword"
-            app:layout_constraintTop_toBottomOf="@+id/textViewPassword" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewPassword">
+
+            <EditText
+                android:id="@+id/editTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:autofillHints=""
+                android:background="@drawable/login_edit_text_background"
+                android:ems="10"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="17dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/login_edit_text_text_color"
+                android:textSize="@dimen/login_edit_text_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="20dp" />
+
+            <ImageButton
+                android:id="@+id/pastePin"
+                style="?android:buttonBarButtonStyle"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="@null"
+                android:paddingBottom="5dp"
+                android:src="@drawable/password_visibility_state"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/editTextPassword"
+                app:layout_constraintTop_toTopOf="@+id/editTextPassword" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonLogin"
@@ -89,9 +136,9 @@
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_16_sp"
-            app:layout_constraintEnd_toEndOf="@+id/editTextPassword"
-            app:layout_constraintStart_toStartOf="@+id/editTextPassword"
-            app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+            app:layout_constraintEnd_toEndOf="@+id/editTextTelNo"
+            app:layout_constraintStart_toStartOf="@+id/editTextTelNo"
+            app:layout_constraintTop_toBottomOf="@+id/editTextPasswordLayout" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonContinue"

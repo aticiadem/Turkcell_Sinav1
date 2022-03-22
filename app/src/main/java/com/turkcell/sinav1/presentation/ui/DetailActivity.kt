@@ -43,6 +43,7 @@ class DetailActivity : AppCompatActivity() {
             textViewName.text = itemInfo.productName
             textViewBrand.text = itemInfo.productBrand
             textViewItemPrice.text = getString(R.string.turkish_lira_float, itemInfo.productPrice)
+            textViewDescription.text = itemInfo.productDescription
         }
         bindingBasket.textViewPrice.text =
             getString(R.string.turkish_lira_float, TOTAL_PRICE)

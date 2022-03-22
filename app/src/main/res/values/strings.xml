@@ -1,11 +1,12 @@
 <resources>
-    <string name="app_name">Turkcell_Sinav1</string>
+    <string name="app_name">Turkcell_Sinav</string>
     <string name="password">Şifre</string>
     <string name="mobile_phone">Cep Telefonu</string>
     <string name="login">Giriş Yap</string>
     <string name="without_login_continue">Üye olmadan devam et</string>
     <string name="fill_in_the_blanks">Boşlukları Doldurunuz!</string>
     <string name="products">Ürünler</string>
+    <string name="login_title">Giriş</string>
     <string name="product_detail">Ürün Detayları</string>
     <string name="basket">Sepet</string>
     <string name="input_error">Telefon Numarası veya Şifre Yanlış.</string>
